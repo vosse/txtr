@@ -5,9 +5,60 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(18, 18, 31);
+  color: whitesmoke;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  padding: 1em;
+}
+
+a {
+  color: rgb(255, 255, 110);
+}
+/*
+/
+/
+*/
+/* NAVBAR */
+.nav-brand {
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  
+}
+
+.yellow-letter {
+  padding-left: 3px;
+  color: rgb(255, 255, 110);
+  border-bottom: 1px solid rgb(255, 255, 110);
+}
+/* NAVBAR */
+/*
+/
+/
+*/
+/* LOGIN */
+.login-container {
+  margin: 0 auto;
+}
+
+
+/* LOGIN */
+/*
+/
+/
+*/
+/* REGISTER */
+.register-container {
+  margin: 0 auto;
+}
+
+
+/* REGISTER */
