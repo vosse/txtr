@@ -39,7 +39,7 @@ export const Navbar = ({ isAuth, setAuth }) => {
     return (
         <div className='nav-container'>
             <div className='nav-brand'>
-                TXTR
+                txt<span className='yellow-letter'>r</span>
             </div>
             <div>
                 is logged in? {isAuth}

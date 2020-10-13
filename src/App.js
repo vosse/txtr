@@ -19,8 +19,6 @@ export const App = () => {
 
   const checkAuth = async () => {
 
-    const tkn = 'x-auth-token'
-
     try {
       const res = await fetch('http://localhost:5000/auth/verify', {
         method: 'POST',
@@ -53,8 +51,8 @@ export const App = () => {
         <React.Fragment>
           <Navbar isAuth={isAuth} setAuth={setAuth} />
           <Switch>
-            <Route exact path='/signup' render={ (props) => <Register isAuth={isAuth} setAuth={setAuth} /> } />
-            <Route exact path='/signin' render={ (props) => <Login isAuth={isAuth} setAuth={setAuth} /> } />
+            <Route exact path='/signup' render={ (props) => !isAuth ? ( <Register isAuth={isAuth} setAuth={setAuth} />) : ( <Redirect to='/' /> ) } />
+            <Route exact path='/signin' render={ (props) => !isAuth ? ( <Login isAuth={isAuth} setAuth={setAuth} /> ) : ( <Redirect to='/' /> )  } />
             <Route exact path='/' render={ (props) => isAuth ? ( <Home /> ) : ( <Landing /> )} />
           </Switch>
         </React.Fragment>
