@@ -1,16 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Navbar = ({ isAuth, setAuth }) => {
 
     const logout = () => {
         setAuth(false)
+        localStorage.removeItem('token')
     }
-    
-    const login = () => {
-        setAuth(true)
-    }
-
-    console.log(isAuth)
 
     const authLinks = (
         <ul className='ul-links'>
@@ -21,23 +17,23 @@ export const Navbar = ({ isAuth, setAuth }) => {
                 Home
             </li>
             <li>
-                Logout
+                <button onClick={logout}>Logout</button>
             </li>
         </ul>
     )
 
     const guestLinks = (
         <ul className='ul-links'>
-        <li>
-            Home
-        </li>
-        <li>
-            Sign In
-        </li>
-        <li>
-            Sign Up
-        </li>
-    </ul>
+            <li>
+                Home
+            </li>
+            <li>
+                <Link to='/signin'>Sign In</Link>
+            </li>
+            <li>
+                <Link to='/signup'>Sign Up</Link>
+            </li>
+        </ul>
     )
 
     return (
@@ -48,12 +44,10 @@ export const Navbar = ({ isAuth, setAuth }) => {
             <div>
                 is logged in? {isAuth}
             </div>
-            <div>
-                <button onClick={login}>login</button>
-                <button onClick={logout}>logout</button>
-            </div>
             <div className='nav-links'>
-
+            { 
+                isAuth ? ( authLinks ) : ( guestLinks )
+            }
             </div>
         </div>
     )

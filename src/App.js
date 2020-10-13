@@ -3,16 +3,29 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { Navbar } from './components/layout/Navbar'
 import { Home } from './components/layout/Home'
 import { Landing } from './components/layout/Landing'
+import { Login } from './components/auth/Login'
+import { Register } from './components/auth/Register'
 import axios from 'axios';
 
 export const App = () => {
 
+  // const getUserInfo = async () => {
+  //   try {
+  //     const res = await fetch('http://localhost/auth/info')
+  //   } catch (err) {
+  //     console.log(err.message)
+  //   }
+  // }
+
   const checkAuth = async () => {
+
+    const tkn = 'x-auth-token'
+
     try {
       const res = await fetch('http://localhost:5000/auth/verify', {
         method: 'POST',
         headers: {
-          jwt_token: localStorage.token
+          'x-auth-token': localStorage.token
         }
       })
 
@@ -40,6 +53,8 @@ export const App = () => {
         <React.Fragment>
           <Navbar isAuth={isAuth} setAuth={setAuth} />
           <Switch>
+            <Route exact path='/signup' render={ (props) => <Register isAuth={isAuth} setAuth={setAuth} /> } />
+            <Route exact path='/signin' render={ (props) => <Login isAuth={isAuth} setAuth={setAuth} /> } />
             <Route exact path='/' render={ (props) => isAuth ? ( <Home /> ) : ( <Landing /> )} />
           </Switch>
         </React.Fragment>
