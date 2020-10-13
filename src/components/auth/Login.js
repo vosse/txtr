@@ -10,9 +10,6 @@ export const Login = ({ isAuth, setAuth }) => {
 
     const { username, password } = input
 
-
-
-
     const onChange = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value })
     }
@@ -26,7 +23,8 @@ export const Login = ({ isAuth, setAuth }) => {
             const res = await fetch('http://localhost:5000/auth/login', {
                 method: 'POST',
                 headers: {
-                    'Content-type': 'application/json'
+                    'Content-type': 'application/json',
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify(body)
             })
@@ -52,7 +50,7 @@ export const Login = ({ isAuth, setAuth }) => {
                         Sign in to your account
                     </div>
                     <div className='form-group'>
-                        <label>Email / Username</label>
+                        <label>Username</label>
                         <input
                             type="text"
                             className='form-control'
