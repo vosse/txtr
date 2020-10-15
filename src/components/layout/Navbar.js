@@ -14,7 +14,7 @@ export const Navbar = ({ isAuth, setAuth }) => {
                 User
             </li>
             <li>
-                Home
+                <Link to='/feed'>Home</Link>
             </li>
             <li>
                 <button onClick={logout}>Logout</button>

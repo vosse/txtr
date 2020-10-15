@@ -5,7 +5,7 @@ import { Home } from './components/layout/Home'
 import { Landing } from './components/layout/Landing'
 import { Login } from './components/auth/Login'
 import { Register } from './components/auth/Register'
-import axios from 'axios';
+import { Feed } from './components/layout/Feed'
 
 export const App = () => {
 
@@ -51,6 +51,7 @@ export const App = () => {
         <React.Fragment>
           <Navbar isAuth={isAuth} setAuth={setAuth} />
           <Switch>
+            <Route exact path='/feed' render={ () => <Feed/> }/>
             <Route exact path='/signup' render={ (props) => !isAuth ? ( <Register isAuth={isAuth} setAuth={setAuth} />) : ( <Redirect to='/' /> ) } />
             <Route exact path='/signin' render={ (props) => !isAuth ? ( <Login isAuth={isAuth} setAuth={setAuth} /> ) : ( <Redirect to='/' /> )  } />
             <Route exact path='/' render={ (props) => isAuth ? ( <Home /> ) : ( <Landing /> )} />
