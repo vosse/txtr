@@ -11,6 +11,10 @@ import { UserPage } from './components/layout/UserPage';
 export const App = () => {
 
 
+  /*
+    add loading, setLoading usestate for better rendering
+  */
+
 
   const checkAuth = async () => {
 
@@ -70,6 +74,7 @@ export const App = () => {
 
   useEffect( () => {
     checkAuth()
+    getUserInfo()
   }, [])
 
   return (
@@ -80,7 +85,7 @@ export const App = () => {
           <Switch>
             <Route exact path='/feed' render={ () => <Feed/> }/>
             <Route exact path='/signup' render={ (props) => !isAuth ? ( <Register isAuth={isAuth} setAuth={setAuth} />) : ( <Redirect to='/' /> ) } />
-            <Route exact path='/user/:username' render={ (props) => <UserPage {...props} /> } />
+            <Route exact path='/user/:username' render={ (props) => <UserPage username={props.match.params.username} /> } />
             <Route exact path='/signin' render={ (props) => !isAuth ? ( <Login isAuth={isAuth} setAuth={setAuth} /> ) : ( <Redirect to='/' /> )  } />
             <Route exact path='/' render={ (props) => isAuth ? ( <Home /> ) : ( <Landing /> )} />
           </Switch>

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-export const UserPage = ({ match }) => {
+export const UserPage = ({ username }) => {
 
-    console.log(match.params.username)
+    //console.log(match.params.username)
 
     const [user, setUser] = useState({})
 
     const getUserInfo = async () => {
         try {
-            const res = await fetch(`http://localhost:5000/user/get/${match.params.username}`, {
+            const res = await fetch(`http://localhost:5000/user/get/${username}`, {
                 method: 'GET'
             })
 
@@ -30,7 +30,23 @@ export const UserPage = ({ match }) => {
 
     return (
         <div>
-            {user.username}
+            {/* { user.texts.map( (t) => (
+                <div>
+                    {t.text}
+                </div>
+            ))} */}
+
+            { user.texts ? <div>
+
+                {
+                    user.texts.map( (t) => (
+                        <div>
+                            {t.text}
+                        </div>
+                    ))
+                }
+
+            </div> : <div>User doesnt exist</div>}
         </div>
     )
 }
