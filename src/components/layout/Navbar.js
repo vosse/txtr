@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const Navbar = ({ isAuth, setAuth }) => {
+export const Navbar = ({ user, isAuth, setAuth }) => {
 
     const logout = () => {
         setAuth(false)
@@ -11,7 +11,7 @@ export const Navbar = ({ isAuth, setAuth }) => {
     const authLinks = (
         <ul className='ul-links'>
             <li>
-                User
+                <Link to={`/user/${user.username}`}>{user.username}</Link>
             </li>
             <li>
                 <Link to='/feed'>Home</Link>
