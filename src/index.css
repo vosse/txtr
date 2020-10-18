@@ -31,6 +31,8 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
 .ul-links {
@@ -101,8 +103,18 @@ a {
 /*MEDIA QUERIES*/
 @media screen and (max-width: 768px) {
 
-  .nav-links {
-    padding-top: 1em;
+  .ul-links.active-false {
+    display: none;
+  }
+  .ul-links.active-true {
+    display: flex; 
+  }
+
+  .ul-links {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: none;
+    margin-top: 0em;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -110,16 +122,14 @@ a {
     padding-left: 0px;
   }
 
+  .navlink-item {
+    padding: 0.5rem;
+  }
+
   .burger {
     display: block;
     cursor: pointer;
   }
-  .active-false {
-    display: none;
-  }
-  .active-true {
-    display: flex;
 
-  }
 }
 /*MEDIA QUERIES*/

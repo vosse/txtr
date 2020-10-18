@@ -15,7 +15,7 @@ export const Navbar = ({ user, isAuth, setAuth }) => {
     }
 
     const authLinks = (
-        <ul className='ul-links'>
+        <ul className={`ul-links active-${active}`}>
             <li className='navlink-item'>
                 <Link to={`/user/${user.username}`}>{user.username}</Link>
             </li>
@@ -29,7 +29,7 @@ export const Navbar = ({ user, isAuth, setAuth }) => {
     )
 
     const guestLinks = (
-        <ul className='ul-links'>
+        <ul className={`ul-links active-${active}`}>
             <li className='navlink-item'>
                 Home
             </li>
@@ -47,16 +47,17 @@ export const Navbar = ({ user, isAuth, setAuth }) => {
             <div className='nav-brand'>
                 txt<span className='yellow-letter'>r</span>
             </div>
-            <div className={`nav-links active-${active}`}>
+                        <div onClick={toggler} className="burger">
+                <div className="line1"></div>
+                <div className="line1"></div>
+                <div className="line1"></div>
+            </div>
+            {/* <div className={`nav-links`}> */}
             { 
                 isAuth ? ( authLinks ) : ( guestLinks )
             }
-            </div>
-            <div onClick={toggler} className="burger">
-                <div className="line1"></div>
-                <div className="line1"></div>
-                <div className="line1"></div>
-            </div>
+            {/* </div> */}
+
         </div>
     )
 }
