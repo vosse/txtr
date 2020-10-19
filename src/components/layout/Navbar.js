@@ -30,14 +30,14 @@ export const Navbar = ({ user, isAuth, setAuth }) => {
 
     const guestLinks = (
         <ul className={`ul-links active-${active}`}>
+            {/* <li className='navlink-item'>
+                <Link className='home-btn' to='/feed'>Home</Link>
+            </li> */}
             <li className='navlink-item'>
-                Home
+                <Link className='login-btn' to='/signin'>Login</Link>
             </li>
             <li className='navlink-item'>
-                <Link to='/signin'>Sign In</Link>
-            </li>
-            <li className='navlink-item'>
-                <Link to='/signup'>Sign Up</Link>
+                <Link className='signup-btn' to='/signup'>Sign Up</Link>
             </li>
         </ul>
     )
