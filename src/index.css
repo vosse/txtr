@@ -17,6 +17,23 @@ code {
     monospace; */
 }
 
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+button:focus {
+  outline: none;
+}
+
+
+
 .App {
   padding: 1em;
 }
@@ -103,6 +120,55 @@ a {
 /* LOGIN */
 .login-container {
   margin: 0 auto;
+  padding-top: 3rem;
+}
+.login-form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: rgb(28,28,41);
+  width: 40%;
+  padding: 3rem 3rem;
+}
+.login-header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(255, 255, 110);
+}
+.form-group {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.continue-btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+#btn-txt {
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(18,18,31);
+}
+.continue-btn {
+
+  background-color: rgb(255, 255, 110);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 6px;
+  border-color: rgb(255, 255, 110);
+  cursor: pointer;
+}
+.dha-btn {
+  margin: 0 auto;
+  text-align: center;
 }
 /* LOGIN */
 /*
@@ -137,26 +203,45 @@ a {
   transform: skewY(9deg);
 } */
 .landing-title {
-  background: -webkit-linear-gradient(180deg, rgb(255, 244, 83), rgb(245, 255, 108));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 500;
   /* text-transform: uppercase; */
   letter-spacing: 2px;
-  padding-bottom: 1rem;
 }
 .subheader {
   /* background: -webkit-linear-gradient(180deg, rgb(255, 244, 83), rgb(245, 255, 108));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.sh {
+  background: -webkit-linear-gradient(180deg, rgb(255, 244, 83), rgb(245, 255, 108));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 .subtle-text {
   font-size: inherit;
   color: rgb(37, 37, 37);
 }
+.signup-btn-container {
+  padding-top: 3rem;
+}
+.landing-signup-btn {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(18,18,31);
+  background-color: rgb(255, 255, 110);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 6px;
+}
+
 /* LANDING */
 /*
 /
