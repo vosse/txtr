@@ -46,7 +46,7 @@ export const Login = ({ isAuth, setAuth }) => {
         <div className='login-container'>
             <div className='login-form'>
                 <form onSubmit={(e) => onSubmit(e)}>
-                    <div>
+                    <div className='login-header'>
                         Sign in to your account
                     </div>
                     <div className='form-group'>
@@ -69,8 +69,10 @@ export const Login = ({ isAuth, setAuth }) => {
                             onChange={(e) => onChange(e)}
                         />
                     </div>
-                    <button>Continue</button>
-                    <span>Don't have an account? <Link to='/signup'>Sign Up</Link></span>
+                    <div className='continue-btn-wrapper'>
+                    <button className='continue-btn'><span id='btn-txt'>Continue</span></button>
+                    </div>
+                    <div className='dha-btn'>Don't have an account? <Link to='/signup'>Sign Up</Link></div>
                 </form>
             </div>
         </div>
