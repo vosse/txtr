@@ -50,7 +50,7 @@ export const Login = ({ isAuth, setAuth }) => {
                         Sign in to your account
                     </div>
                     <div className='form-group'>
-                        <label>Username</label>
+                        <label className='form-label'>Username</label>
                         <input
                             type="text"
                             className='form-control'
@@ -60,7 +60,7 @@ export const Login = ({ isAuth, setAuth }) => {
                         />
                     </div>
                     <div className='form-group'>
-                        <label>Password</label>
+                        <label className='form-label'>Password</label>
                         <input
                             type="password"
                             className='form-control'
