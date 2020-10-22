@@ -298,6 +298,7 @@ input:focus {
   .form-group {
     margin-left: 0;
     padding: 0;
+    width: 60%;
   }
 
   .login-form {
