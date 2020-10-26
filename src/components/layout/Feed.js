@@ -28,8 +28,8 @@ export const Feed = () => {
     }, [])
 
     return (
-        <div>
+        // <div className='texts-container'>
             <ListTexts allTexts={texts} />
-        </div>
+        // </div>
     )
 }

@@ -27,6 +27,10 @@ export const UserPage = ({ username }) => {
         getUserInfo()
     }, [])
 
+    const dateFormatter = (date) => {
+        return date.substring(0, 10)
+    }
+
 
     return (
         <div>
@@ -36,12 +40,21 @@ export const UserPage = ({ username }) => {
                 </div>
             ))} */}
 
-            { user.texts ? <div>
-
+            { user.texts ? <div className='texts-container'>
                 {
-                    user.texts.map( (t) => (
-                        <div>
-                            {t.text}
+                    user.texts.map((t) => (
+                        <div className='text-wrapper'>
+                            <div className='text-header-wrapper'>
+                            <div className='text-name'>
+                                {user.name}<span>{'  '}</span> <span className='text-username'>@{user.username}</span>
+                            </div>
+                            <div className='text-date'>
+                                {dateFormatter(t.created_at)}
+                            </div>
+                            </div>
+                            <div className='text-content'>
+                                {t.text}
+                            </div>
                         </div>
                     ))
                 }

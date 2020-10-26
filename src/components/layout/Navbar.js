@@ -20,7 +20,7 @@ export const Navbar = ({ user, isAuth, setAuth }) => {
                 <Link to={`/user/${user.username}`}>{user.username}</Link>
             </li>
             <li className='navlink-item'>
-                <Link to='/feed'>Home</Link>
+                <Link to='/'>Home</Link>
             </li>
             <li className='navlink-item'>
                 <button onClick={logout}>Logout</button>

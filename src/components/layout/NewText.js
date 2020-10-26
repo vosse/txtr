@@ -36,18 +36,21 @@ export const NewText = ({ texts, setTexts }) => {
     return (
         <div className='text-form-container'>
             <form onSubmit={e => onSubmit(e)}>
-                <div className='form-group'>
-                    <label>Text</label>
-                    <input
-                        type='text'
-                        className='form-control'
-                        name='text'
-                        placeholer="What's on your mind?"
-                        value={text}
-                        onChange={(e) => onChange(e)}
-                    />
+                <div className='form-group nt-form'>
+                    {/* <label>Text</label> */}
+                    <div className='form-wrapper'>
+                        <input
+                            type='text'
+                            className='form-control nt-form-control'
+                            name='text'
+                            placeholder="What's on your mind?"
+                            value={text}
+                            onChange={(e) => onChange(e)}
+                            required="required"
+                        />
+                    </div>
+                    <button  id='nt-button' type='submit' >Text</button>
                 </div>
-                <button type='submit' >Text</button>
             </form>
             
         </div>

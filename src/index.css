@@ -126,11 +126,12 @@ a {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 6px;
   background: rgb(28,28,41);
-  width: 40%;
+  width: 50%;
+  max-width: 550px;
   padding: 3rem 3rem;
 }
 .login-header {
@@ -139,11 +140,23 @@ a {
   font-weight: 500;
   color: rgb(255, 255, 110);
 }
+form {
+  width: 80%;
+}
+
 .form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.form-label {
+}
 .form-control {
+  width: 80%;
+  max-width: 350px;
   margin-left: 10px;
   font-size: 1rem;
   padding: 8px 10px;
@@ -257,8 +270,115 @@ input:focus {
 /
 /
 */
+/* USER PAGE */
+.place {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.texts-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.text-wrapper {
+  color: rgb(24, 24, 24);
+  background-color: whitesmoke;
+  padding: 1rem;
+  width: 60%;
+  max-width: 720px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+.text-header-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+.text-name {
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+.text-username {
+  color: grey;
+}
+.text-date {
+  font-size: 0.8rem;
+}
+/* USER PAGE */
+/*
+/
+/
+*/
+/* NEW TEXT */
+.text-form-container {
+  width: 60%;
+  max-width: 1024px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: rgb(24, 24, 24);
+  border-radius: 6px;
+  background-color: whitesmoke;
+}
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.nt-form {
+
+}
+.nt-form-control {
+  
+  border: 1px solid grey;
+  margin-right: 2rem;
+}
+::placeholder {
+  color: grey;
+}
+#nt-button {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: rgb(18,18,31);
+  color: whitesmoke;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 2px 2px 2px #aaaaaa;
+}
+/* NEW TEXT */
+/*
+/
+/
+*/
 /*MEDIA QUERIES*/
 @media screen and (max-width: 768px) {
+
+  form {
+    width: 80%;
+  }
 
   .nav-container {
     max-width: 90%;
@@ -294,11 +414,15 @@ input:focus {
   .form-label {
     width: 100%;
   }
-
   .form-group {
-    margin-left: 0;
-    padding: 0;
-    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form-control {
+    margin: 0 auto;
+    width: 90%;
   }
 
   .login-form {
@@ -309,8 +433,19 @@ input:focus {
     align-items: center;
     border-radius: 6px;
     background: rgb(28,28,41);
-    width: 90%;
-    padding: 0px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 80%;
+  }
+
+  .text-wrapper {
+    width: 80%;
+  }
+
+  .text-form-container {
+    width: 80%;
   }
 
 }

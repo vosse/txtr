@@ -2,21 +2,34 @@ import React, { useState, useEffect } from 'react'
 
 export const ListTexts = ({ allTexts }) => {
 
-    // const [texts, setTexts] = useState([])
+    [loading, setLoading] = useState(true)
 
-    // useEffect( () => {
-    //     setTexts(texts)
-    // }, [])
+    
 
+    const dateFormatter = (date) => {
+        return date.substring(0, 10)
+    }
+
+    console.log(allTexts)
 
     return (
-        <div className='text-container'>
-            oof
+        <div className='place'>
             {
-                 allTexts.length !== 0 && allTexts.map( (t) => (
-                    <li key={t.id}>
-                        Text: {t.text}
-                    </li>
+                 allTexts && allTexts.length !== 0 && allTexts.map( (t) => (
+                            <div className='text-wrapper'>
+                                <div className='text-header-wrapper'>
+                                <div className='text-name'>
+                                    {t.user.name}<span>{'  '}</span> <span className='text-username'>@{t.user.username}</span>
+                                </div>
+                                <div className='text-date'>
+                                    {dateFormatter(t.created_at)}
+                                </div>
+                                </div>
+                                <div className='text-content'>
+                                    {t.text}
+                                </div>
+                            </div>
+                        
                 ))
             }
         </div>

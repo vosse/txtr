@@ -9,7 +9,7 @@ export const Home = () => {
     const getTexts = async () => {
 
         try {
-            const res = await fetch('http://localhost:5000/text/user', {
+            const res = await fetch('http://localhost:5000/text/all', {
                 method: 'GET',
                 headers: {
                     'x-auth-token': localStorage.token
@@ -30,9 +30,10 @@ export const Home = () => {
 
     return (
         <div>
-            Home
             <NewText texts={texts} setTexts={setTexts} />
-            <ListTexts allTexts={texts} />
+            {/* <div className='texts-container'> */}
+                <ListTexts allTexts={texts} />
+            {/* </div> */}
         </div>
     )
 }
