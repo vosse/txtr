@@ -343,7 +343,7 @@ form {
 }
 .text-form-container {
   width: 60%;
-  max-width: 1024px;
+  max-width: 800px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -403,7 +403,7 @@ textarea:focus {
 .nt-wrapper {
   padding-top: 1rem;
   max-width: 500px;
-  width: 80%;
+  width: 60%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -432,6 +432,15 @@ textarea:focus {
 /
 */
 /*MEDIA QUERIES*/
+@media screen and (max-width: 1385px) {
+  .nt-wrapper {
+    width: 80%;
+  }
+}
+/*
+/
+/
+*/
 @media screen and (max-width: 768px) {
 
   form {
