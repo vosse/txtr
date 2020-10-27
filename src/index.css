@@ -12,6 +12,10 @@ body {
   
 }
 
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
 code {
   /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace; */
@@ -112,6 +116,20 @@ a {
   padding-bottom: 6px;
   border-radius: 6px;
 }
+.logout-btn {
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(18,18,31);
+  background-color: rgb(255, 255, 110);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 6px;
+}
 /* NAVBAR */
 /*
 /
@@ -186,7 +204,7 @@ input:focus {
   padding-top: 6px;
   padding-bottom: 6px;
   border-radius: 6px;
-  border-color: rgb(255, 255, 110);
+  border: none;
   cursor: pointer;
 }
 .dha-btn {
