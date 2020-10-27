@@ -6,6 +6,10 @@ export const NewText = ({ texts, getTexts }) => {
 
     const onChange = (e) => {
         setText(e.target.value)
+        let tx = document.querySelector('.nt-form-control');
+        for (let i = 0; i < tx.length; i++) {
+          tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+        }
     }
 
     const onSubmit = async (e) => {
@@ -33,23 +37,28 @@ export const NewText = ({ texts, getTexts }) => {
         setText('')
     }
 
+
     return (
         <div className='text-form-container'>
             <form onSubmit={e => onSubmit(e)}>
                 <div className='form-group nt-form'>
-                    {/* <label>Text</label> */}
+
                     <div className='form-wrapper'>
-                        <input
+                        <textarea
                             type='text'
-                            className='form-control nt-form-control'
+                            className='nt-form-control'
                             name='text'
                             placeholder="What's on your mind?"
                             value={text}
                             onChange={(e) => onChange(e)}
                             required="required"
+                            maxLength="255"
                         />
                     </div>
-                    <button  id='nt-button' type='submit' >Text</button>
+                    <div className='nt-wrapper'>
+                        <div className='text-counter'>{255-text.length}</div>
+                        <button  id='nt-button' type='submit' >Text</button>
+                    </div>
                 </div>
             </form>
             
