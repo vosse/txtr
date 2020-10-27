@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export const ListTexts = ({ allTexts, loading }) => {
 
@@ -18,7 +19,7 @@ export const ListTexts = ({ allTexts, loading }) => {
                             <div className='text-wrapper'>
                                 <div className='text-header-wrapper'>
                                 <div className='text-name'>
-                                    {t.user.name}<span>{'  '}</span> <span className='text-username'>@{t.user.username}</span>
+                                    {t.user.name}<span>{'  '}</span> <Link to={`/user/${t.user.username}`}><span className='text-username'>@{t.user.username}</span></Link>
                                 </div>
                                 <div className='text-date'>
                                     {dateFormatter(t.created_at)}
