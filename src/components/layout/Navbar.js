@@ -17,13 +17,13 @@ export const Navbar = ({ user, isAuth, setAuth }) => {
     const authLinks = (
         <ul className={`ul-links active-${active}`}>
             <li className='navlink-item'>
-                <Link to={`/user/${user.username}`}>{user.username}</Link>
+                <a href={`/user/${user.username}`}>{user.username}</a>
             </li>
             <li className='navlink-item'>
                 <Link to='/'>Home</Link>
             </li>
             <li className='navlink-item'>
-                <button onClick={logout}>Logout</button>
+                <button className='logout-btn' onClick={logout}>Logout</button>
             </li>
         </ul>
     )
