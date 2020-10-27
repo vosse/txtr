@@ -338,6 +338,9 @@ input:focus {
 /
 */
 /* NEW TEXT */
+form {
+  width: 100%;
+}
 .text-form-container {
   width: 60%;
   max-width: 1024px;
@@ -355,21 +358,59 @@ input:focus {
   border-radius: 6px;
   background-color: whitesmoke;
 }
+textarea {
+  width: 100%;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+textarea:focus {
+  border:1px solid #808080;
+  outline: none;
+}
 .form-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
 }
 .nt-form {
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .nt-form-control {
-  
+  width: 80%;
+  max-width: 500px;
+  margin-left: 10px;
+  font-size: 1rem;
+  padding: 8px 10px;
+  border: 1px solid whitesmoke;
+  border-radius: 6px;
+  background-color: whitesmoke;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
   border: 1px solid grey;
-  margin-right: 2rem;
 }
 ::placeholder {
   color: grey;
+}
+.nt-wrapper {
+  padding-top: 1rem;
+  max-width: 500px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-counter {
+  color: #808080;
 }
 #nt-button {
   font-size: 1.2rem;
@@ -384,7 +425,6 @@ input:focus {
   border-radius: 6px;
   cursor: pointer;
   border: none;
-  box-shadow: 2px 2px 2px #aaaaaa;
 }
 /* NEW TEXT */
 /*
@@ -463,7 +503,21 @@ input:focus {
   }
 
   .text-form-container {
-    width: 80%;
+    width: 90%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nt-form {
+    width: 100%;
+  }
+
+  .nt-wrapper {
+    width: 100%;
+  }
+
+  .nt-form-control {
+    width: 100%;
   }
 
 }
