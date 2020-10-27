@@ -5,6 +5,7 @@ import { NewText } from './NewText'
 export const Home = () => {
 
     const [texts, setTexts] = useState([])
+    const [loading, setLoading] = useState(true)
 
     const getTexts = async () => {
 
@@ -22,6 +23,9 @@ export const Home = () => {
         } catch (err) {
             console.log(err)
         }
+
+        setLoading(false)
+
     }
 
     useEffect( () => {
@@ -30,9 +34,9 @@ export const Home = () => {
 
     return (
         <div>
-            <NewText texts={texts} setTexts={setTexts} />
+            <NewText texts={texts} getTexts={getTexts} />
             {/* <div className='texts-container'> */}
-                <ListTexts allTexts={texts} />
+                <ListTexts allTexts={texts} loading={loading} />
             {/* </div> */}
         </div>
     )

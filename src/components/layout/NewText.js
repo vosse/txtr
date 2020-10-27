@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const NewText = ({ texts, setTexts }) => {
+export const NewText = ({ texts, getTexts }) => {
 
     const [text, setText] = useState('')
 
@@ -23,13 +23,13 @@ export const NewText = ({ texts, setTexts }) => {
                 },
                 body: JSON.stringify(body)
             })
-            const parseRes = await res.json()
-            setTexts([ ...texts, parseRes ])
+            var parseRes = await res.json()
+            getTexts()
             console.log(parseRes)
         } catch (err) {
             console.log(err.message)
         }
-
+        
         setText('')
     }
 

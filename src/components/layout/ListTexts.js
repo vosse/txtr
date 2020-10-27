@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react'
 
-export const ListTexts = ({ allTexts }) => {
+export const ListTexts = ({ allTexts, loading }) => {
 
-    [loading, setLoading] = useState(true)
 
-    
+
 
     const dateFormatter = (date) => {
         return date.substring(0, 10)
     }
 
     console.log(allTexts)
-
-    return (
+    // loading === true
+    return  allTexts.length === 0 ? (<div>loading...</div>) : (
         <div className='place'>
             {
-                 allTexts && allTexts.length !== 0 && allTexts.map( (t) => (
+                 allTexts[0].user && allTexts.length !== 0 && allTexts.map( (t) => (
                             <div className='text-wrapper'>
                                 <div className='text-header-wrapper'>
                                 <div className='text-name'>
