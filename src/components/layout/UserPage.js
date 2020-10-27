@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export const UserPage = ({ username }) => {
 
@@ -46,7 +47,7 @@ export const UserPage = ({ username }) => {
                         <div className='text-wrapper'>
                             <div className='text-header-wrapper'>
                             <div className='text-name'>
-                                {user.name}<span>{'  '}</span> <span className='text-username'>@{user.username}</span>
+                                {user.name}<span>{'  '}</span><Link to={`/user/${user.username}`}><span className='text-username'>@{user.username}</span></Link>
                             </div>
                             <div className='text-date'>
                                 {dateFormatter(t.created_at)}
