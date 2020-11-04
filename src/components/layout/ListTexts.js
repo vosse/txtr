@@ -28,6 +28,9 @@ export const ListTexts = ({ allTexts, loading }) => {
                                 <div className='text-content'>
                                     {t.text}
                                 </div>
+                                <div className='text-link'>
+                                    <Link to={`/text/${t.text_id}`}>Link</Link>
+                                </div>
                             </div>
                         
                 ))
