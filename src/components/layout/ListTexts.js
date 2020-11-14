@@ -29,7 +29,7 @@ export const ListTexts = ({ allTexts, loading }) => {
                                     {t.text}
                                 </div>
                                 <div className='text-link'>
-                                    <Link to={`/text/${t.text_id}`}>Link</Link>
+                                    <Link to={`/text/${t.text_id}`}><img className='link-icon' src={require('./link.svg')}/></Link>
                                 </div>
                             </div>
                         

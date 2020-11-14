@@ -5,6 +5,10 @@ export const Text = ({ text_id }) => {
 
     const [text, setText] = useState()
 
+    const deleteText = async () => {
+        
+    }
+
     const getText = async () => {
         
         try {
