@@ -47,53 +47,55 @@ export const Register = ({ isAuth, setAuth }) => {
 
     return (
         <div className='register-container'>
-        <div className='register-form'>
+        <div id='reg-form' className='register-form'>
             <form onSubmit={(e) => onSubmit(e)}>
-                <div>
+                <div className='login-header'>
                     Create your account
                 </div>
-                <div className='form-group'>
-                    <label>Email</label>
+                <div className='reg-form-group'>
+                    <label className='form-label'>Email</label>
                     <input
                         type="text"
-                        className='form-control'
+                        className='reg-form-control'
                         name='email'
                         value={email}
                         onChange={(e) => onChange(e)}
                     />
                 </div>
-                <div className='form-group'>
-                    <label>Username</label>
+                <div className='reg-form-group'>
+                    <label className='form-label'>Username</label>
                     <input
                         type="text"
-                        className='form-control'
+                        className='reg-form-control'
                         name='username'
                         value={username}
                         onChange={(e) => onChange(e)}
                     />
                 </div>
-                <div className='form-group'>
-                    <label>Name</label>
+                <div className='reg-form-group'>
+                    <label className='form-label'>Name</label>
                         <input
                             type="text"
-                            className='form-control'
+                            className='reg-form-control'
                             name='name'
                             value={name}
                             onChange={(e) => onChange(e)}
                         />
                 </div>
-                <div className='form-group'>
-                    <label>Password</label>
+                <div className='reg-form-group'>
+                    <label className='form-label'>Password</label>
                     <input
                         type="password"
-                        className='form-control'
+                        className='reg-form-control'
                         name='password'
                         value={password}
                         onChange={(e) => onChange(e)}
                     />
                 </div>
-                <button>Continue</button>
-                <span>Have an account? <Link to='/signin'>Sign In</Link></span>
+                <div className='continue-btn-wrapper'>
+                    <button className='continue-btn'><span id='btn-txt'>Continue</span></button>
+                    </div>
+                    <div className='dha-btn'>Have an account? <Link to='/signup'>Sign In</Link></div>
             </form>
         </div>
     </div>

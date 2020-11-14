@@ -219,6 +219,40 @@ input:focus {
 /* REGISTER */
 .register-container {
   margin: 0 auto;
+  padding-top: 3rem;
+}
+.register-form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 6px;
+  background: rgb(28,28,41);
+  width: 50%;
+  max-width: 550px;
+  padding: 3rem 3rem;
+}
+.form-label {
+  padding-bottom: 8px;
+}
+.reg-form-control {
+  width: 80%;
+  max-width: 350px;
+  margin-left: 0px;
+  font-size: 1rem;
+  padding: 8px 10px;
+  border: 1px solid whitesmoke;
+  border-radius: 6px;
+  background-color: whitesmoke;
+}
+.reg-form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 /* REGISTER */
 /*
