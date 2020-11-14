@@ -17,7 +17,7 @@ export const Navbar = ({ user, isAuth, setAuth }) => {
     const authLinks = (
         <ul className={`ul-links active-${active}`}>
             <li className='navlink-item'>
-                <a href={`/user/${user.username}`}>{user.username}</a>
+                <a href={`/u/${user.username}`}>{user.username}</a>
             </li>
             <li className='navlink-item'>
                 <Link to='/'>Home</Link>
