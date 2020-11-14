@@ -3,6 +3,29 @@ import { Link }  from 'react-router-dom'
 
 export const Profile = ({ username, user }) => {
 
+    const [texts, setTexts] = useState({})
+
+    const getTexts = () => {
+        try {
+            const res = fetch('http://localhost:5000/text/user', {
+                method: 'GET',
+                headers: {
+                    'x-auth-token': localStorage.token
+                }
+            }).then( res => res.json())
+            .then(data => setTexts(data))
+
+            //const parseRes = await res.json()
+
+        } catch (err) {
+            console.log(err.message)            
+        }
+    }
+
+
+    useEffect( () => {
+        getTexts()
+    }, [])
 
     return user.length === 0 ? (
         <div>
@@ -39,9 +62,11 @@ export const Profile = ({ username, user }) => {
                     </div> ) : ( <div> </div>)
                 }
                 {
-                    <div className='profile-txt-count'>
-                        
+                    texts.length !== 0 ? (
+                    <div className='profile-item'>
+                        Texts count: {texts.length}
                     </div>
+                    ) : ( <div> eeh </div>)
                 }
             </div>
         </div>
