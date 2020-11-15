@@ -5,6 +5,12 @@ export const Profile = ({ username, user, setIsAuth, isAuth }) => {
 
     const [texts, setTexts] = useState({})
 
+
+    const dateFormatter = (date) => {
+        return date.substring(0, 10)
+    }
+
+
     const getTexts = () => {
         try {
             const res = fetch('http://localhost:5000/text/user', {
@@ -13,9 +19,12 @@ export const Profile = ({ username, user, setIsAuth, isAuth }) => {
                     'x-auth-token': localStorage.token
                 }
             }).then( res => res.json())
-            .then(data => setTexts(data))
+            .then( (data) => {
+                setTexts(data)})
 
             //const parseRes = await res.json()
+
+            
 
         } catch (err) {
             console.log(err.message)            
@@ -62,13 +71,14 @@ export const Profile = ({ username, user, setIsAuth, isAuth }) => {
         getTexts()
     }, [])
 
+
     return user.length === 0 ? (
         <div>
             loading...
         </div>
     ) : (
         <div>
-            <div className='profile-container'>
+            {user && <div className='profile-container'>
                 <div className='profile-item'>
                     Email: {user.email}
                 </div>
@@ -103,11 +113,19 @@ export const Profile = ({ username, user, setIsAuth, isAuth }) => {
                     </div>
                     ) : ( <div></div>)
                 }
+                
+                    <div className='profile-item createdat'>
+                        Created at: 
+                    {user.created_at !== undefined ? 
+                        (dateFormatter(user.created_at)) : (user.created_at) }
+                    </div>
+                
+                
                 <div className='btn-wrapper'>
                     <Link className='update-btn' to={`/u/${user.username}/update`}>Edit</Link>
                     <button onClick={deleteUser} className='del-btn'>Delete</button>
                 </div>
-            </div>
-        </div>
+            </div> }
+        </div> 
     )
 }
