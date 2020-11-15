@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Link }  from 'react-router-dom'
+import { Link, useHistory }  from 'react-router-dom'
 
-export const Profile = ({ username, user }) => {
+export const Profile = ({ username, user, setIsAuth, isAuth }) => {
 
     const [texts, setTexts] = useState({})
 
@@ -22,15 +22,36 @@ export const Profile = ({ username, user }) => {
         }
     }
 
+    const history = useHistory()
 
-    const deleteUser = () => {
+    const routeBack = () => {
+
+        //if(localStorage.token) {
+            
+        //}
+        localStorage.clear()
+        //setIsAuth(!isAuth)
+        window.location.href='/'
+        
+       // history.push('/signin')
+    }
+
+
+    const deleteUser = async () => {
+
+
         try {
             const res = fetch(`http://localhost:5000/user/delete/${username}`, {
                 method: 'DELETE',
                 headers: {
                     'x-auth-token': localStorage.token
                 }
-            }).then(res => res.json())
+            }).then( res => res.json()).catch( (err) => console.log(err))
+
+
+            //logout()
+            routeBack()
+
         } catch (err) {
             console.log(err.message)
         }
@@ -80,7 +101,7 @@ export const Profile = ({ username, user }) => {
                     <div className='profile-item'>
                         Texts count: {texts.length}
                     </div>
-                    ) : ( <div> eeh </div>)
+                    ) : ( <div></div>)
                 }
                 <div className='btn-wrapper'>
                     <Link className='update-btn' to={`/u/${user.username}/update`}>Edit</Link>

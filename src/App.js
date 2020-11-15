@@ -87,7 +87,7 @@ export const App = () => {
           <Switch>
             <Route exact path='/feed' render={ () => <Feed/> }/>
             <Route exact path='/signup' render={ (props) => !isAuth ? ( <Register isAuth={isAuth} setAuth={setAuth} />) : ( <Redirect to='/' /> ) } />
-            <Route exact path='/u/:username' render={ (props) => !isAuth ? ( <Register isAuth={isAuth} setAuth={setAuth} />) : ( <Profile user={user} username={props.match.params.username} />)} />
+            <Route exact path='/u/:username' render={ (props) => !isAuth ? ( <Register setIsAuth={setIsAuth} isAuth={isAuth} setAuth={setAuth} />) : ( <Profile user={user} username={props.match.params.username} />)} />
             <Route exact path='/user/:username' render={ (props) => <UserPage username={props.match.params.username} /> } />
             <Route exact path='/text/:text_id' render={ (props) => <Text text_id={props.match.params.text_id}/> } />
             <Route exact path='/signin' render={ (props) => !isAuth ? ( <Login isAuth={isAuth} setAuth={setAuth} /> ) : ( <Redirect to='/' /> )  } />
