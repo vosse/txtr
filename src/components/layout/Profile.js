@@ -23,6 +23,20 @@ export const Profile = ({ username, user }) => {
     }
 
 
+    const deleteUser = () => {
+        try {
+            const res = fetch(`http://localhost:5000/user/delete/${username}`, {
+                method: 'DELETE',
+                headers: {
+                    'x-auth-token': localStorage.token
+                }
+            }).then(res => res.json())
+        } catch (err) {
+            console.log(err.message)
+        }
+    }
+
+
     useEffect( () => {
         getTexts()
     }, [])
@@ -68,6 +82,10 @@ export const Profile = ({ username, user }) => {
                     </div>
                     ) : ( <div> eeh </div>)
                 }
+                <div className='btn-wrapper'>
+                    <Link className='update-btn' to={`/u/${user.username}/update`}>Edit</Link>
+                    <button onClick={deleteUser} className='del-btn'>Delete</button>
+                </div>
             </div>
         </div>
     )
